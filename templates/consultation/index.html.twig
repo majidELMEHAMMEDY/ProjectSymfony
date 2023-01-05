@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Consulattions{% endblock %}
+
+{% block body %}
+    {% for message in app.flashes("success") %}
+        <div class="alert alert-success">
+        <b> {{ message }} </b>  
+        </div>
+    {% endfor %}
+
+    {% for message in app.flashes("error") %}
+        <div class="alert alert-danger">
+            <b> {{ message }} </b>   
+        </div>
+    {% endfor %}
+    <div class="card-header text-center"><h1>Liste des Consulattions</h1></div>
+        <div class="card-body bg-light>">
+            <a href="{{ path('app_consultation_new') }}"class="btn btn-success">
+                <i class="fa fa-plus"></i>
+            </a>
+            <a href="{{ path('app_index') }}"class="btn btn-primary">
+                <i class="fa fa-home"></i>
+            </a>
+            <table class="table text-center">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>TYPE</th>
+                        <th>DUREE "Min"</th>
+                        <th>PRIX "MAD"</th>
+                        <th>ACTIONS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for consultation in consultations %}
+                        <tr>
+                            <td>{{ consultation.id }}</td>
+                            <td>{{ consultation.type }}</td>
+                            <td>{{ consultation.duree }}</td>
+                            <td>{{ consultation.prix }}</td>
+                            <td>
+                                <a href="{{ path( 'app_consultation_show', {'id': consultation.id} ) }}" class="btn btn-primary ">
+                                    <i class="fa fa-eye "></i>
+                                </a>
+                                <a href="{{ path( 'app_consultation_edit', {'id': consultation.id} ) }}" class="btn btn-warning">
+                                    <i class="fa fa-edit "></i>
+                                </a>
+                                <a href="{{ path( 'app_consultation_delete', {'id': consultation.id} ) }}" class="btn btn-danger">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="5">no records found</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+{% endblock %}

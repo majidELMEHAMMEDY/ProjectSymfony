@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Patient{% endblock %}
+
+{% block body %}
+        <div class="card-header text-center"><h1>Patient</h1></div>
+            <div class="card-body bg-light>">
+                <a href="{{ path('app_patient_index') }}"class="btn btn-primary">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </a>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>Id</th>
+                            <td>{{ patient.id }}</td>
+                        </tr>
+                        <tr>
+                            <th>Nom</th>
+                            <td>{{ patient.nom }}</td>
+                        </tr>
+                        <tr>
+                            <th>Prenom</th>
+                            <td>{{ patient.prenom }}</td>
+                        </tr>
+                        <tr>
+                            <th>Telephone</th>
+                            <td>{{ patient.telephone }}</td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td>{{ patient.email }}</td>
+                        </tr>
+                        <tr>
+                            <th>Adresse</th>
+                            <td>{{ patient.adresse }}</td>
+                        </tr>
+                        <tr>
+                            <th>DateNaissance</th>
+                            <td>{{ patient.dateNaissance ? patient.dateNaissance|date('Y-m-d') : '' }}</td>
+                        </tr>
+                        <tr>
+                            <th>Sexe</th>
+                            <td>{% if(patient.sexe== 'F' ) %}
+                                Femme
+                                {% else %}
+                                Homme
+                                {% endif %}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+    
+
+    
+{% endblock %}

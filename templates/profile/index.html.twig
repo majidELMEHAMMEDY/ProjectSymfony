@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ user.username }} {% endblock %}
+
+{% block body %}
+    {% for message in app.flashes("success") %}
+        <div class="alert alert-success">
+           <b> {{ message }} </b>   
+        </div>
+    {% endfor %}
+    <div class="card-header text-center"><h1> {{ user.username }} </h1></div>
+            {{ include('profile/_form.html.twig', {'button_label': 'Modifier'}) }}
+    </div>
+
+    
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier une Consultation{% endblock %}
+
+{% block body %}
+    <div class="card-header text-center"><h1>Modifier une Consultation</h1></div>
+        <div class="card-body bg-light">
+            
+            {{ include('consultation/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+        </div>
+    
+{% endblock %}

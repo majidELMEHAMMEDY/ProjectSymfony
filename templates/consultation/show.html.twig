@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Consultation{% endblock %}
+
+{% block body %}
+    <div class="card-header text-center"><h1>Consultation</h1></div>
+    <div class="card-body bg-light>">
+        <a href="{{ path('app_consultation_index') }}"class="btn btn-primary">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ consultation.id }}</td>
+                </tr>
+                <tr>
+                    <th>Type</th>
+                    <td>{{ consultation.type }}</td>
+                </tr>
+                <tr>
+                    <th>Duree</th>
+                    <td>{{ consultation.duree }}</td>
+                </tr>
+                <tr>
+                    <th>Prix</th>
+                    <td>{{ consultation.prix }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    
+{% endblock %}

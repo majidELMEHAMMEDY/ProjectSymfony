@@ -1,0 +1,27 @@
+
+<div class="card-body bg-light>">
+            <div class="mb-4">
+            <a href="{{ path('app_index') }}"class="btn btn-primary">
+                <i class="fa-solid fa-home"></i>
+            </a>
+            </div>
+        {{ form_start(form) }}
+            <div class="example-wrapper ">
+                <div class="text-center">
+                    {% if user.image == null %}
+                            <img src="https://static.vecteezy.com/ti/vecteur-libre/p1/4637574-personne-inconnue-identite-cachee-icone-ligne-vectoriel.jpg" 
+                                width="250" height="250"
+                                class="img-fluid rounded-circle"
+                            />
+                    {% else %}
+                        <img src="{{asset('/images/'~user.image)}}" 
+                            width="250" height="250"
+                            class="img-fluid rounded-circle"
+                        />
+                    {% endif %}
+                </div>
+                {{ form_widget(form) }}
+                    <button class="btn btn-dark">{{ button_label|default('Valider') }}</button>
+            </div>    
+        {{ form_end(form) }}
+</div>

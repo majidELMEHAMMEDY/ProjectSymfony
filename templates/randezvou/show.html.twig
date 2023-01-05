@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Randez-vous{% endblock %}
+
+{% block body %}
+    <div class="card-header text-center"><h1>Randez-vous</h1></div>
+    <div class="card-body bg-light>">
+        <a href="{{ path('app_randezvou_index') }}"class="btn btn-primary">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ randezvou.id }}</td>
+                </tr>
+                <tr>
+                    <th>Patient</th>
+                    <td>{{ randezvou.patient }}</td>
+                </tr>
+                <tr>
+                    <th>Consultation</th>
+                    <td>{{ randezvou.consultation }}</td>
+                </tr>
+            
+                    
+                <tr>
+                    <th>Date</th>
+                    <td>{{ randezvou.date ? randezvou.date|date('Y-m-d') : '' }}</td>
+                </tr>
+                <tr>
+                    <th>Heuredebut</th>
+                    <td>{{ randezvou.heuredebut ? randezvou.heuredebut|date('H:i:s') : '' }}</td>
+                </tr>
+                <tr>
+                    <th>Heurefin</th>
+                    <td>{{ randezvou.heurefin ? randezvou.heurefin|date('H:i:s') : '' }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    
+    
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Modifier le Randezvous
+{% endblock %}
+
+{% block body %}
+    <div class="card-header text-center"><h1>Modifier le Randezvous</h1></div>
+    {{ include('randezvou/_form.html.twig', {'button_label': 'Modifier'}) }}
+{% endblock %}

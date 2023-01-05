@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Patient{% endblock %}
+
+{% block body %}
+    <div class="card-header text-center"><h1>Modifer un Patient</h1></div>
+        {{ include('patient/_form.html.twig', {'button_label': 'Modifier'}) }}
+    </div>
+
+    
+{% endblock %}
